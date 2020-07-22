@@ -1,4 +1,70 @@
+enum subtype
+{
+    spinner , slider , hopper
+};
 
+class Icon
+{
+    public:
+    static void move(subtype rxd_subtype);
+}Icon_obj;
+
+
+class spinner
+{
+    bool clockwise;
+    bool expand;
+    public:
+    void spin()
+    {
+    }
+}spinner_obj;
+
+class slider
+{
+    bool vertical;
+    int  distance;
+    public:
+    void slide()
+    {
+    }
+}slider_obj;
+
+class hopper
+{
+    bool visible;
+    int xcoord,ycoord;
+    public:
+    void hop()
+    {
+    }
+
+}hopper_obj;
+
+
+void Icon_obj ::  move(subtype rxd_subtype)
+{
+ if( rxd_subtype == 1)
+     spinner_obj.spin();
+    
+ else if(rxd_subtype == 2)
+     slider_obj.slide();
+ else
+     hopper_obj.hop();
+ 
+}
+
+int main()
+{
+    subtype type = 1;
+    Icon_obj.move( type);
+}
+
+
+
+
+
+/*Old piece of code*/
 class Icon
 {
     float speed, glow, energy;
